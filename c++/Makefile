@@ -7,16 +7,16 @@ ALL_BINARIES = $(TARGETS:%=main-%-clang) $(TARGETS:%=main-%-clang-static) $(TARG
 all: $(ALL_BINARIES)
 
 %-clang: %.cpp
-	clang++ -O3 --std=c++17 -flto -s -o $@ $<
+	clang++ -O3 --std=c++23 -flto -s -o $@ $<
 
 %-clang-static : %.cpp
-	/usr/bin/clang++ -O3 --std=c++17 -flto -s -static -o $@ $<
+	/usr/bin/clang++ -O3 --std=c++23 -flto -s -static -o $@ $<
 
 %-gcc : %.cpp
-	g++ -O3 --std=c++17 -flto -s -o $@ $<
+	g++ -O3 --std=c++23 -flto -s -o $@ $<
 
 %-gcc-static : %.cpp
-	g++ -O3 --std=c++17 -flto -s -static -o $@ $<
+	g++ -O3 --std=c++23 -flto -s -static -o $@ $<
 
 .PHONY: clean
 clean:
